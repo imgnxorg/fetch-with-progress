@@ -1,0 +1,22 @@
+{
+  "name": "fetch-with-progress",
+  "version": "1.0.0",
+  "description": "Fetch a URL and receive the raw response back so that you can parse the headers and figure out how much data is on the other end.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imgnx/fetch-w-progress.git"
+  },
+  "keywords": [
+    "fetch"
+  ],
+  "author": "Donald Moore (IMGNX Org.)",
+  "license": "0BSD",
+  "bugs": {
+    "url": "https://github.com/imgnx/fetch-w-progress/issues"
+  },
+  "homepage": "https://github.com/imgnx/fetch-w-progress#readme"
+}
