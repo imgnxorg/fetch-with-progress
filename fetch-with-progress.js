@@ -6,7 +6,8 @@ async function fetchWithProgress(input, init) {
     try {
         // Pre-checks for fetch
         precheck(input, init);
-    } catch (error) {
+    }
+    catch (error) {
         console.error("Pre-check failed:", error ? error.message : error);
         console.warn(`Fetch aborted. If you need this to work without 
 throwing an error, please adjust the catch block at the top of 
@@ -15,8 +16,7 @@ the function.`);
         throw error;
     }
     // Initialize variables
-    let message = "fetching...",
-        percentage = 0;
+    let message = "fetching...", percentage = 0;
     // Step 1: Get the content length using a HEAD request
     const contentLength = await getContentLength(input.toString());
     if (!contentLength) {
@@ -38,32 +38,30 @@ tracking, please ensure that the server supports HEAD requests.`);
                 reader
                     .read()
                     .then(({ done, value }) => {
-                        if (done) {
-                            controller.close();
-                            return;
-                        }
-                        loaded += value.length;
-                        // Progress calculation when Content-Length is available
-                        let progress = {
-                            percentage: null,
-                            loaded: loaded,
-                            total: total,
-                        };
-                        if (total) {
-                            progress.percentage = (loaded / total) * 100;
-                        }
-                        message = `Fetching: ${
-                            progress.percentage !== null
-                                ? progress.percentage.toFixed(2) + "%"
-                                : loaded + "/? bytes"
-                        }`;
-                        controller.enqueue(value);
-                        read();
-                    })
+                    if (done) {
+                        controller.close();
+                        return;
+                    }
+                    loaded += value.length;
+                    // Progress calculation when Content-Length is available
+                    let progress = {
+                        percentage: null,
+                        loaded: loaded,
+                        total: total,
+                    };
+                    if (total) {
+                        progress.percentage = (loaded / total) * 100;
+                    }
+                    message = `Fetching: ${progress.percentage !== null
+                        ? progress.percentage.toFixed(2) + "%"
+                        : loaded + "/? bytes"}`;
+                    controller.enqueue(value);
+                    read();
+                })
                     .catch((error) => {
-                        console.error("Stream error:", error);
-                        controller.error(error);
-                    });
+                    console.error("Stream error:", error);
+                    controller.error(error);
+                });
             }
             read();
         },
@@ -81,7 +79,8 @@ async function getContentLength(url) {
         const headResponse = await fetch(url, { method: "HEAD" });
         const contentLength = headResponse.headers.get("Content-Length");
         return contentLength ? parseInt(contentLength, 10) : null;
-    } catch (error) {
+    }
+    catch (error) {
         console.error("Failed to get content length:", error);
         return null;
     }
