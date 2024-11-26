@@ -1,5 +1,5 @@
 {
-    "name": "fetch-with-progress",
+    "name": "fetch-loader",
     "version": "1.0.0",
     "description": "Fetch a URL and receive the raw response back so that you can parse the headers and figure out how much data is on the other end.",
     "main": "lib/index.js",
@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/imgnx/fetch-w-progress.git"
+        "url": "git+https://github.com/imgnxorg/fetch-loader.git"
     },
     "keywords": [
         "fetch"
@@ -17,9 +17,9 @@
     "author": "Donald Moore (IMGNX Org.)",
     "license": "0BSD",
     "bugs": {
-        "url": "https://github.com/imgnx/fetch-w-progress/issues"
+        "url": "https://github.com/imgnxorg/fetch-loader/issues"
     },
-    "homepage": "https://github.com/imgnx/fetch-w-progress#readme",
+    "homepage": "https://github.com/imgnxorg/fetch-loader#readme",
     "dependencies": {
         "tslint": "^6.1.3",
         "typescript": "^5.6.3"
