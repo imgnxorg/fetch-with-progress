@@ -1,5 +1,5 @@
 {
-    "name": "fetch-with-progress",
+    "name": "fetch-lodaer",
     "version": "1.0.0",
     "description": "Fetch a URL and receive the raw response back so that you can parse the headers and figure out how much data is on the other end.",
     "main": "lib/index.js",
