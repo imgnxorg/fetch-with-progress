@@ -2,7 +2,7 @@
     "name": "fetch-with-progress",
     "version": "1.0.0",
     "description": "Fetch a URL and receive the raw response back so that you can parse the headers and figure out how much data is on the other end.",
-    "main": "index.js",
+    "main": "lib/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "tsc"
